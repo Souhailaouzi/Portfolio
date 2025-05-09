@@ -15,7 +15,7 @@ export default function Navbar({ lightMode, setLightMode }: NavbarProps) {
         
         <div className="flex items-center space-x-4">
           <div className="hidden md:flex space-x-10">
-            {["Home", "skills", "Formation", "Project", "Contact me"].map((item, index) => (
+            {["Home", "Formation", "skills", "Project", "Contact me"].map((item, index) => (
               <a 
                 key={index}
                 href={`#${item.toLowerCase().replace(' ', '-')}`} 

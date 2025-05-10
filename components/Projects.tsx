@@ -13,7 +13,7 @@ const projects = [
       "Reporting des recettes/dépenses mensuelles."
     ],
     tags: ["C#", ".NET", "SQL Server", "T-SQL"],
-    github: "https://github.com/tonrepo/gestion-association",
+    github: "https://github.com/Souhailaouzi/DIGITAL_ZONE",
     demo: "",
     image: "/img/img1.SVg",
   },
@@ -64,7 +64,7 @@ export default function Projects({ lightMode }: ProjectsProps) {
         <h2 className={`text-4xl md:text-5xl font-extrabold text-center mb-10 font-mono ${lightMode ? "text-[#0a192f]" : "text-[#ccd6f6]"}`}>
           Mes Projets
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
           {projects.map((project, idx) => (
             <div
               key={idx}

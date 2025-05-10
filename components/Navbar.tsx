@@ -18,7 +18,7 @@ export default function Navbar({ lightMode, setLightMode }: NavbarProps) {
             {["Home", "Formation", "skills", "Project", "Contact me"].map((item, index) => (
               <a 
                 key={index}
-                href={`#${item.toLowerCase().replace(' ', '-')}`} 
+                href={item === "Contact me" ? "#contact" : `#${item.toLowerCase().replace(' ', '-')}`}
                 className="text-gray-300 hover:text-[#64ffda] transition-colors duration-300 font-mono text-sm"
               >
                 {item}

@@ -24,6 +24,7 @@ export default function Home() {
       <Skills lightMode={lightMode} />
       <Projects lightMode={lightMode} />
       <Contact lightMode={lightMode} setShowThankYou={setShowThankYou} />
+    
     </main>
   );
 }

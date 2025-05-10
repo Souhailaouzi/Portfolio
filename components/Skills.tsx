@@ -63,7 +63,7 @@ export default function Skills({ lightMode }: SkillsProps) {
             </button>
           ))}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
           <div className="w-full">
             <h3 className={`text-2xl font-bold mb-8 flex items-center gap-2 font-mono ${lightMode ? "text-[#0a192f]" : "text-[#ccd6f6]"}`}>
               <span className={`w-2 h-6 rounded-sm inline-block ${lightMode ? "bg-[#0a192f]" : "bg-[#64ffda]"}`}></span>
@@ -92,7 +92,7 @@ export default function Skills({ lightMode }: SkillsProps) {
             </div>
           </div>
           <div className="w-full">
-            <div className="space-y-8" style={{ marginTop: "4.5rem" }}>
+            <div className="space-y-8 mt-8 md:mt-0">
               {skillsData[selectedCategory]
                 .slice(Math.ceil(skillsData[selectedCategory].length / 2))
                 .map((skill) => (

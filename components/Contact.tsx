@@ -8,35 +8,35 @@ interface ContactProps {
 }
 
 export default function Contact({ lightMode, setShowThankYou }: ContactProps) {
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    
-    try {
-      const response = await fetch('https://formsubmit.co/souhailaouzi1949@gmail.com', {
-        method: 'POST',
-        body: formData,
-      });
-      
-      if (response.ok) {
-        setShowThankYou(true);
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-    }
-  };
-
   return (
     <section id="contact" className={`py-16 ${lightMode ? "bg-white" : "bg-[#0a192f]"}`}>
       <h2 className={`text-4xl md:text-5xl font-extrabold text-center mb-8 font-mono ${lightMode ? "text-[#0a192f]" : "text-[#ccd6f6]"}`}>
         Contact
       </h2>
-      <div className="max-w-4xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
         {/* Formulaire à gauche */}
         <form 
-          onSubmit={handleSubmit}
+          data-netlify="true"
+          name="contact"
+          method="POST"
+          action="/ThankYou"
+          data-netlify-honeypot="bot-field"
+          onSubmit={(e) => {
+            e.preventDefault();
+            const formData = new FormData(e.currentTarget);
+            fetch("/", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: new URLSearchParams(formData as any).toString(),
+            })
+              .then(() => setShowThankYou(true))
+              .catch((error) => alert(error));
+          }}
           className={`bg-transparent p-4 rounded-xl shadow ${lightMode ? "" : "text-[#ccd6f6]"}`}
         >
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="success" value="/thank-you" />
           <h3 className={`text-2xl font-bold mb-4 font-mono ${lightMode ? "text-[#0a192f]" : "text-[#64ffda]"}`}>Contactez-moi</h3>
           <div className="mb-2">
             <label className="block mb-1 font-semibold text-sm" htmlFor="name">Nom</label>

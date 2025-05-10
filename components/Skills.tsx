@@ -44,16 +44,18 @@ export default function Skills({ lightMode }: SkillsProps) {
       className={`py-24 ${lightMode ? "bg-white" : "bg-[#0a192f]"}`}
     >
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className={`text-4xl md:text-5xl font-extrabold text-center mb-2 font-mono ${lightMode ? "text-[#0a192f]" : "text-[#ccd6f6]"}`}>
+        <h2 className={
+          `text-2xl md:text-4xl font-extrabold text-center mb-2 font-mono ${lightMode ? "text-[#0a192f]" : "text-[#ccd6f6]"} tracking-normal md:tracking-widest`
+        }>
           Mes Compétences
         </h2>
-        <div className="w-24 h-1 mx-auto bg-[#64ffda] rounded mb-8"></div>
-        <div className="flex justify-center gap-4 mb-8">
+        <div className="w-24 h-1 mx-auto bg-[#64ffda] rounded mb-6 md:mb-8"></div>
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-6 md:mb-8">
           {Object.keys(skillsData).map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat as SkillCategory)}
-              className={`px-4 py-2 rounded font-bold ${
+              className={`px-3 py-1 md:px-4 md:py-2 rounded font-bold text-xs md:text-base ${
                 selectedCategory === cat
                   ? "bg-[#64ffda] text-[#0a192f]"
                   : "bg-[#233554] text-[#ccd6f6]"

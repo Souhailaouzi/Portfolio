@@ -4,10 +4,9 @@ import { BsTelephoneFill } from 'react-icons/bs';
 
 interface ContactProps {
   lightMode: boolean;
-  setShowThankYou: (show: boolean) => void;
 }
 
-export default function Contact({ lightMode, setShowThankYou }: ContactProps) {
+export default function Contact({ lightMode }: ContactProps) {
   return (
     <section id="contact" className={`py-16 ${lightMode ? "bg-white" : "bg-[#0a192f]"}`}>
       <h2 className={`text-4xl md:text-5xl font-extrabold text-center mb-8 font-mono ${lightMode ? "text-[#0a192f]" : "text-[#ccd6f6]"}`}>
@@ -19,19 +18,8 @@ export default function Contact({ lightMode, setShowThankYou }: ContactProps) {
           data-netlify="true"
           name="contact"
           method="POST"
-          action="/ThankYou"
+          action="/thank-you"
           data-netlify-honeypot="bot-field"
-          onSubmit={(e) => {
-            e.preventDefault();
-            const formData = new FormData(e.currentTarget);
-            fetch("/", {
-              method: "POST",
-              headers: { "Content-Type": "application/x-www-form-urlencoded" },
-              body: new URLSearchParams(formData as any).toString(),
-            })
-              .then(() => setShowThankYou(true))
-              .catch((error) => alert(error));
-          }}
           className={`bg-transparent p-4 rounded-xl shadow ${lightMode ? "" : "text-[#ccd6f6]"}`}
         >
           <input type="hidden" name="form-name" value="contact" />

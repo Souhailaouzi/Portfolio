@@ -9,8 +9,11 @@ export default function Navbar({ lightMode, setLightMode }: NavbarProps) {
   return (
     <nav className="fixed w-full bg-[#0a192f]/90 backdrop-blur-sm py-4 z-50">
       <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
-        <a href="#home" className="text-[#64ffda] text-xl font-mono font-bold hover:text-white transition-colors duration-300">
-          سهيل اوزي
+        <a
+          href="#home"
+          className="text-[#64ffda] text-xl font-sans font-medium tracking-wide relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-[#64ffda] after:transition-all after:duration-300 hover:after:w-full"
+        >
+          SOUHAIL
         </a>
         
         <div className="flex items-center space-x-4">

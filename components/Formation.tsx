@@ -17,7 +17,7 @@ export default function Formation({ lightMode }: FormationProps) {
           <div className={`${lightMode ? "bg-white" : "bg-[#112240]"} rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2`}>
             <div className="p-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-2xl font-bold text-[#64ffda]">LICENCE INFORMATIQUE</h3>
+                <h3 className="text-2xl font-bold text-[#64ffda]">LST  en INFORMATIQUE</h3>
                 <span className={`font-mono bg-[#64ffda]/10 px-3 py-1 rounded-full ${lightMode ? "text-[#0a192f]" : "text-[#ccd6f6]"}`}>2023 - 2024</span>
               </div>
               <div className="space-y-3">

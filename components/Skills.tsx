@@ -4,19 +4,17 @@ type SkillCategory = 'FRONTEND' | 'BACKEND' | 'DATABASE' | 'DEVOPS';
 
 const skillsData: Record<SkillCategory, { name: string; percent: number }[]> = {
   FRONTEND: [
-    { name: "React", percent: 90 },
+    { name: "NEXT JS", percent: 90 },
     { name: "Redux", percent: 80 },
     { name: "Tailwind CSS", percent: 85 },
-    { name: "bootstrap", percent: 85 },
+    { name: "BOOTSTRAP", percent: 85 },
   ],
   BACKEND: [
-    { name: "Node.js", percent: 80 },
     { name: "Express.js", percent: 75 },
     { name: "Python", percent: 85 },
     { name: "JEE", percent: 85 },
-    { name: "Java", percent: 75 },
     { name: "Spring Boot", percent: 75 },
-    { name: "PHP", percent: 70 },
+
   ],
   DATABASE: [
     { name: "Oracle", percent: 80 },
@@ -94,7 +92,7 @@ export default function Skills({ lightMode }: SkillsProps) {
             </div>
           </div>
           <div className="w-full">
-            <div className="space-y-8 mt-8 md:mt-0">
+            <div className="space-y-8">
               {skillsData[selectedCategory]
                 .slice(Math.ceil(skillsData[selectedCategory].length / 2))
                 .map((skill) => (

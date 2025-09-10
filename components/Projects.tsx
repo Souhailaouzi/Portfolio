@@ -50,7 +50,7 @@ const projects = [
       "de la boutique a son interface personnelle afin",
       "d y acceder et ajouter,modifier,supprimer des produits"
     ],
-    tags: ["HTML", "CSS", "JavaScript","JEE", "PHP", "SQL"],
+    tags: ["J2EE", "PL-SQL","JWT"],
     github: "https://github.com/Souhailaouzi/COOPERATIVE_DE_MIEL",
     demo: "",
     image: "/img/img3.svg",

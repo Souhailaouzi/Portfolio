@@ -23,7 +23,7 @@ export default function Hero() {
             </p>
             <p className="text-base">
               My focus is on creating efficient, scalable solutions
-              using modern JavaScript technologies across the entire development stack.
+              using modern Java technologies across the entire development stack.
             </p>
           </div>
           {/* Buttons */}
@@ -69,10 +69,10 @@ export default function Hero() {
         </div>
         {/* Image côté droite */}
         <div className="md:w-1/3 flex justify-end">
-          <div className="relative w-80 h-80">
-            <div className="w-full h-full rounded-full overflow-hidden border-2 border-[#64ffda] animate-professional-border">
+          <div className="relative w-85 h-85">
+            <div className="w-full h-full rounded-full overflow-hidden   animate-professional-border">
               <img 
-                src="/img/souhail.jpeg" 
+                src="/img/image_souhail.jpeg" 
                 alt="Profile" 
                 className="w-full h-full object-cover"
               />

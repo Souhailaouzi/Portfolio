@@ -51,7 +51,7 @@ export default function Contact({ lightMode }: ContactProps) {
           <h3 className={`text-xl font-bold mb-2 font-mono ${lightMode ? "text-[#0a192f]" : "text-[#64ffda]"}`}>Mes infos</h3>
           <div className="flex items-center gap-2 text-sm">
             <BsTelephoneFill className="text-[#64ffda] w-5 h-5" />
-            <span className={`${lightMode ? "text-[#0a192f]" : "text-[#ccd6f6]"}`}>+212 6 93 99 18 50</span>
+            <span className={`${lightMode ? "text-[#0a192f]" : "text-[#ccd6f6]"}`}>+212 6 75 58 89 51</span>
           </div>
           <div className="flex items-center gap-2 text-sm">
             <MdEmail className="text-[#64ffda] w-5 h-5" />

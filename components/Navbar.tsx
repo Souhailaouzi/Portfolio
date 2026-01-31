@@ -1,46 +1,72 @@
-import { FiSun, FiMoon } from "react-icons/fi";
+'use client';
 
-interface NavbarProps {
-  lightMode: boolean;
-  setLightMode: (value: boolean) => void;
-}
+import { useState, useEffect } from 'react';
 
-export default function Navbar({ lightMode, setLightMode }: NavbarProps) {
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Change navbar style after scrolling past hero (100vh)
+      setScrolled(window.scrollY > window.innerHeight - 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed w-full bg-[#0a192f]/90 backdrop-blur-sm py-4 z-50">
-      <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
+    <nav className={`fixed w-full py-4 z-50 transition-all duration-300 ${
+      scrolled
+        ? 'bg-[#0a0a0a]'
+        : 'bg-transparent'
+    }`}>
+      <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-20 flex justify-between items-center">
+        {/* Logo */}
         <a
           href="#home"
-          className="text-[#64ffda] text-xl font-sans font-medium tracking-wide relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-[#64ffda] after:transition-all after:duration-300 hover:after:w-full"
+          className="text-lg font-bold tracking-wider text-white hover:text-[#d4a574] transition-colors duration-300"
         >
-          SOUHAIL
+          SA
         </a>
-        
-        <div className="flex items-center space-x-4">
-          <div className="hidden md:flex space-x-10">
-            {["Home", "Formation", "skills", "Project", "Contact me"].map((item, index) => (
-              <a 
-                key={index}
-                href={item === "Contact me" ? "#contact" : `#${item.toLowerCase().replace(' ', '-')}`}
-                className="text-gray-300 hover:text-[#64ffda] transition-colors duration-300 font-mono text-sm"
-              >
-                {item}
-              </a>
-            ))}
-          </div>
-          <button
-            onClick={() => setLightMode(!lightMode)} 
-            className="ml-4 p-2 rounded-full bg-[#233554] hover:bg-[#64ffda] transition-colors duration-300 flex items-center justify-center"
-            aria-label="Toggle light mode"
-          >
-            {lightMode ? (
-              <FiMoon className="text-[#0a192f] w-6 h-6" />
-            ) : (
-              <FiSun className="text-[#64ffda] w-6 h-6" />
-            )}
-          </button>
+
+        {/* Center Navigation */}
+        <div className="hidden md:flex items-center gap-1 px-1 py-1 border border-[#333] rounded-full">
+          {[
+            { label: "HOME", href: "#home" },
+            { label: "ABOUT", href: "#formation" },
+            { label: "SKILLS", href: "#skills" },
+            { label: "PROJECTS", href: "#project" },
+            { label: "CONTACT", href: "#contact" },
+          ].map((item, index) => (
+            <a
+              key={index}
+              href={item.href}
+              className="text-xs tracking-wider px-4 py-2 rounded-full text-[#888] hover:text-white hover:bg-white/5 transition-all duration-300"
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
+
+        {/* CTA Button */}
+        <a
+          href="#contact"
+          className="hidden md:flex items-center px-5 py-2 border border-[#d4a574] text-[#d4a574] text-xs tracking-wider hover:bg-[#d4a574] hover:text-white transition-all duration-300"
+        >
+          GET IN TOUCH
+        </a>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden p-2 text-white transition-colors duration-300"
+          aria-label="Menu"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
     </nav>
   );
-} 
+}

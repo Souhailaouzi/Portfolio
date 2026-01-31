@@ -2,85 +2,112 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { BsTelephoneFill } from 'react-icons/bs';
 
-interface ContactProps {
-  lightMode: boolean;
-}
-
-export default function Contact({ lightMode }: ContactProps) {
+export default function Contact() {
   return (
-    <section id="contact" className={`py-16 ${lightMode ? "bg-white" : "bg-[#0a192f]"}`}>
-      <h2 className={`text-4xl md:text-5xl font-extrabold text-center mb-8 font-mono ${lightMode ? "text-[#0a192f]" : "text-[#ccd6f6]"}`}>
-        Contact
-      </h2>
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
-        {/* Formulaire à gauche */}
-        <form 
+    <section id="contact" className="py-16 bg-[#fafafa]">
+      <div className="max-w-4xl mx-auto px-8 md:px-16">
+        {/* Section Header */}
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0a0a0a] mb-3">
+            GET IN TOUCH
+          </h2>
+          <div className="w-20 h-1 bg-[#d4a574] mx-auto mb-4"></div>
+          <p className="text-[#666] text-sm max-w-md mx-auto">
+            Feel free to reach out for collaborations or just a friendly hello
+          </p>
+        </div>
+
+        {/* Contact Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+          <a
+            href="tel:+212675588951"
+            className="group flex flex-col items-center p-4 bg-white border border-[#e5e5e5] hover:border-[#d4a574] transition-all"
+          >
+            <BsTelephoneFill className="w-5 h-5 text-[#d4a574] mb-2" />
+            <span className="text-[#888] text-xs">Phone</span>
+          </a>
+
+          <a
+            href="mailto:souhailaouzi1949@gmail.com"
+            className="group flex flex-col items-center p-4 bg-white border border-[#e5e5e5] hover:border-[#d4a574] transition-all"
+          >
+            <MdEmail className="w-5 h-5 text-[#d4a574] mb-2" />
+            <span className="text-[#888] text-xs">Email</span>
+          </a>
+
+          <a
+            href="https://linkedin.com/in/souhail-aouzi-1949sou"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center p-4 bg-white border border-[#e5e5e5] hover:border-[#d4a574] transition-all"
+          >
+            <FaLinkedin className="w-5 h-5 text-[#d4a574] mb-2" />
+            <span className="text-[#888] text-xs">LinkedIn</span>
+          </a>
+
+          <a
+            href="https://github.com/Souhailaouzi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center p-4 bg-white border border-[#e5e5e5] hover:border-[#d4a574] transition-all"
+          >
+            <FaGithub className="w-5 h-5 text-[#d4a574] mb-2" />
+            <span className="text-[#888] text-xs">GitHub</span>
+          </a>
+        </div>
+
+        {/* Contact Form - Compact */}
+        <form
           data-netlify="true"
           name="contact"
           method="POST"
           action="/thank-you"
           data-netlify-honeypot="bot-field"
-          className={`bg-transparent p-4 rounded-xl shadow ${lightMode ? "" : "text-[#ccd6f6]"}`}
+          className="bg-white border border-[#e5e5e5] p-6"
         >
           <input type="hidden" name="form-name" value="contact" />
           <input type="hidden" name="bot-field" />
-          <input type="hidden" name="success" value="/thank-you" />
-          <h3 className={`text-2xl font-bold mb-4 font-mono ${lightMode ? "text-[#0a192f]" : "text-[#64ffda]"}`}>Contactez-moi</h3>
-          <div className="mb-2">
-            <label className="block mb-1 font-semibold text-sm" htmlFor="name">Nom</label>
-            <input type="text" id="name" name="name" required placeholder="Votre nom"
-              className="w-full px-3 py-1.5 rounded-lg bg-[#e5e7eb] text-[#0a192f] text-sm focus:outline-none focus:ring-2 focus:ring-[#64ffda]" />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <input
+              type="text"
+              name="name"
+              required
+              placeholder="Your name"
+              className="w-full px-4 py-2 text-sm bg-[#fafafa] border border-[#e5e5e5] text-[#0a0a0a] placeholder-[#aaa] focus:outline-none focus:border-[#d4a574] transition-colors"
+            />
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="Your email"
+              className="w-full px-4 py-2 text-sm bg-[#fafafa] border border-[#e5e5e5] text-[#0a0a0a] placeholder-[#aaa] focus:outline-none focus:border-[#d4a574] transition-colors"
+            />
           </div>
-          <div className="mb-2">
-            <label className="block mb-1 font-semibold text-sm" htmlFor="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="Votre email"
-              className="w-full px-3 py-1.5 rounded-lg bg-[#e5e7eb] text-[#0a192f] text-sm focus:outline-none focus:ring-2 focus:ring-[#64ffda]" />
-          </div>
-          <div className="mb-2">
-            <label className="block mb-1 font-semibold text-sm" htmlFor="message">Message</label>
-            <textarea id="message" name="message" rows={3} required placeholder="Votre message"
-              className="w-full px-3 py-1.5 rounded-lg bg-[#e5e7eb] text-[#0a192f] text-sm focus:outline-none focus:ring-2 focus:ring-[#64ffda]" />
-          </div>
-          <button type="submit"
-            className="w-full py-2 mt-2 rounded-lg bg-[#64ffda] text-[#0a192f] font-bold hover:bg-[#52e0c4] transition text-sm">
-            Envoyer
+
+          <textarea
+            name="message"
+            rows={3}
+            required
+            placeholder="Your message"
+            className="w-full px-4 py-2 text-sm bg-[#fafafa] border border-[#e5e5e5] text-[#0a0a0a] placeholder-[#aaa] focus:outline-none focus:border-[#d4a574] transition-colors resize-none mb-4"
+          />
+
+          <button
+            type="submit"
+            className="w-full py-3 bg-[#d4a574] text-white text-sm font-bold tracking-wider hover:bg-[#c49464] transition-colors"
+          >
+            SEND MESSAGE
           </button>
         </form>
-        {/* Infos à droite */}
-        <div className={`flex flex-col gap-4 p-4 rounded-xl shadow ${lightMode ? "bg-[#f5f7fa]" : "bg-[#112240]"}`}>
-          <h3 className={`text-xl font-bold mb-2 font-mono ${lightMode ? "text-[#0a192f]" : "text-[#64ffda]"}`}>Mes infos</h3>
-          <div className="flex items-center gap-2 text-sm">
-            <BsTelephoneFill className="text-[#64ffda] w-5 h-5" />
-            <span className={`${lightMode ? "text-[#0a192f]" : "text-[#ccd6f6]"}`}>+212 6 75 58 89 51</span>
-          </div>
-          <div className="flex items-center gap-2 text-sm">
-            <MdEmail className="text-[#64ffda] w-5 h-5" />
-            <span className={`${lightMode ? "text-[#0a192f]" : "text-[#ccd6f6]"}`}>souhailaouzi1949@gmail.com</span>
-          </div>
-          <div className="flex items-center gap-2 text-sm">
-            <FaLinkedin className="text-[#64ffda] w-5 h-5" />
-            <a
-              href="https://linkedin.com/in/souhail-aouzi-1949sou"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`underline ${lightMode ? "text-[#0a192f]" : "text-[#ccd6f6]"}`}
-            >
-              LinkedIn
-            </a>
-          </div>
-          <div className="flex items-center gap-2 text-sm">
-            <FaGithub className="text-[#64ffda] w-5 h-5" />
-            <a
-              href="https://github.com/Souhailaouzi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`underline ${lightMode ? "text-[#0a192f]" : "text-[#ccd6f6]"}`}
-            >
-              GitHub
-            </a>
-          </div>
+
+        {/* Footer */}
+        <div className="mt-10 pt-6 border-t border-[#e5e5e5] text-center">
+          <p className="text-[#888] text-xs">
+            © 2025 Souhail Aouzi. All Rights Reserved.
+          </p>
         </div>
       </div>
     </section>
   );
-} 
+}

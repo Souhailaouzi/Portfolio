@@ -14,7 +14,7 @@ export default function ThankYou() {
           href="/"
           className="inline-block px-6 py-3 bg-[#64ffda] text-[#0a192f] rounded-md font-bold hover:bg-[#52e0c4] transition-colors duration-300"
         >
-          Retour à l'accueil
+          Retour à l&apos;accueil
         </Link>
       </div>
     </div>

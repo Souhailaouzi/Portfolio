@@ -1,6 +1,7 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { BsTelephoneFill } from 'react-icons/bs';
+import { socialLinks } from '@/data/navigation';
 
 export default function Contact() {
   return (
@@ -20,7 +21,7 @@ export default function Contact() {
         {/* Contact Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
           <a
-            href="tel:+212675588951"
+            href={`tel:${socialLinks.phone}`}
             className="group flex flex-col items-center p-4 bg-white border border-[#e5e5e5] hover:border-[#d4a574] transition-all"
           >
             <BsTelephoneFill className="w-5 h-5 text-[#d4a574] mb-2" />
@@ -28,7 +29,7 @@ export default function Contact() {
           </a>
 
           <a
-            href="mailto:souhailaouzi1949@gmail.com"
+            href={`mailto:${socialLinks.email}`}
             className="group flex flex-col items-center p-4 bg-white border border-[#e5e5e5] hover:border-[#d4a574] transition-all"
           >
             <MdEmail className="w-5 h-5 text-[#d4a574] mb-2" />
@@ -36,7 +37,7 @@ export default function Contact() {
           </a>
 
           <a
-            href="https://linkedin.com/in/souhail-aouzi-1949sou"
+            href={socialLinks.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex flex-col items-center p-4 bg-white border border-[#e5e5e5] hover:border-[#d4a574] transition-all"
@@ -46,7 +47,7 @@ export default function Contact() {
           </a>
 
           <a
-            href="https://github.com/Souhailaouzi"
+            href={socialLinks.github}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex flex-col items-center p-4 bg-white border border-[#e5e5e5] hover:border-[#d4a574] transition-all"

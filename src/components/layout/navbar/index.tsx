@@ -1,13 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { navLinks } from '@/data/navigation';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Change navbar style after scrolling past hero (100vh)
       setScrolled(window.scrollY > window.innerHeight - 100);
     };
 
@@ -32,13 +32,7 @@ export default function Navbar() {
 
         {/* Center Navigation */}
         <div className="hidden md:flex items-center gap-1 px-1 py-1 border border-[#333] rounded-full">
-          {[
-            { label: "HOME", href: "#home" },
-            { label: "ABOUT", href: "#formation" },
-            { label: "SKILLS", href: "#skills" },
-            { label: "PROJECTS", href: "#project" },
-            { label: "CONTACT", href: "#contact" },
-          ].map((item, index) => (
+          {navLinks.map((item, index) => (
             <a
               key={index}
               href={item.href}

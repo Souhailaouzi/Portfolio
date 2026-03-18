@@ -1,5 +1,5 @@
 import './globals.css'
-import { inter, firaCode } from './font'
+import { inter, firaCode } from '@/lib/fonts'
 
 export const metadata = {
   title: 'Souhail Portfolio',

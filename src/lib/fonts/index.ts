@@ -7,6 +7,6 @@ export const inter = Inter({
 
 export const firaCode = Fira_Code({
   subsets: ['latin'],
-  weight: '400',  // Add a weight since Fira Code might need it
+  weight: '400',
   display: 'swap',
 });

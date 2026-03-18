@@ -1,6 +1,7 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { HiArrowDown } from 'react-icons/hi';
+import { socialLinks } from '@/data/navigation';
 
 export default function Hero() {
   return (
@@ -61,7 +62,7 @@ export default function Hero() {
           {/* Social Links */}
           <div className="flex items-center gap-6">
             <a
-              href="https://github.com/Souhailaouzi"
+              href={socialLinks.github}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#666] hover:text-white transition-colors duration-300"
@@ -69,7 +70,7 @@ export default function Hero() {
               <FaGithub className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com/in/souhail-aouzi-1949sou"
+              href={socialLinks.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#666] hover:text-white transition-colors duration-300"
@@ -77,7 +78,7 @@ export default function Hero() {
               <FaLinkedin className="w-5 h-5" />
             </a>
             <a
-              href="mailto:souhailaouzi1949@gmail.com"
+              href={`mailto:${socialLinks.email}`}
               className="text-[#666] hover:text-white transition-colors duration-300"
             >
               <MdEmail className="w-5 h-5" />

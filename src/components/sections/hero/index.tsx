@@ -22,13 +22,13 @@ export default function Hero() {
           <div className="mb-6">
             <div className="h-[70px] md:h-[90px] overflow-hidden">
               <div className="animate-role-slide-2">
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1] tracking-tight h-[70px] md:h-[90px] flex items-center">FULL STACK</h1>
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1] tracking-tight h-[70px] md:h-[90px] flex items-center">SOFTWARE</h1>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1] tracking-tight h-[70px] md:h-[90px] flex items-center">DEVOPS</h1>
               </div>
             </div>
             <div className="h-[70px] md:h-[90px] overflow-hidden">
               <div className="animate-role-slide-2">
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1] tracking-tight text-transparent stroke-text h-[70px] md:h-[90px] flex items-center">DEVELOPER</h1>
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1] tracking-tight text-transparent stroke-text h-[70px] md:h-[90px] flex items-center">ENGINEER</h1>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1] tracking-tight text-transparent stroke-text h-[70px] md:h-[90px] flex items-center">ENGINEER</h1>
               </div>
             </div>
@@ -92,7 +92,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#0a0a0a]/50 to-[#0a0a0a] z-10" />
             <img
               src="/img/image_souhail.jpeg"
-              alt="Souhail - Full Stack Developer"
+              alt="Souhail - Software Engineer"
               className="w-full h-full object-cover object-center"
               style={{
                 filter: 'sepia(20%) saturate(80%) brightness(90%)',
@@ -107,7 +107,7 @@ export default function Hero() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-[#0a0a0a]/60 z-10" />
           <img
             src="/img/image_souhail.jpeg"
-            alt="Souhail - Full Stack Developer"
+            alt="Souhail - Software Engineer"
             className="w-full h-full object-cover object-top opacity-30"
             style={{
               filter: 'sepia(20%) saturate(80%) brightness(70%)',
